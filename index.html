@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<link rel="shortcut icon" href="./assets/img/favicon.ico" />
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="./assets/img/apple-icon.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<title>Landing | Tailwind Starter Kit by Creative Tim</title>
+		<style>
+			@font-face {
+				font-family: "Stratum";
+				src: url(./Stratum2WebBlack.e2ef8d1.woff) format("truetype");
+				font-weight: bold;
+			}
+			@font-face {
+				font-family: "Stratum";
+				src: url(./Stratum2WebBold.b575fab.woff) format("truetype");
+				font-weight: normal;
+			}
+			.c01-header-navigation {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 3;
+				-webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+				transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+				-o-transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+				transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+				transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+					-webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+			}
+
+			.c01-header-navigation:not(.active) {
+				-webkit-transform: translateY(-100%);
+				-ms-transform: translateY(-100%);
+				transform: translateY(-100%);
+			}
+
+			.c01-header-navigation:after,
+			.c01-header-navigation:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: auto;
+				left: 0;
+				right: 0;
+				min-height: 100%;
+				width: 100%;
+				pointer-events: none;
+			}
+
+			.c01-header-navigation:after {
+				z-index: -99999;
+				background: -webkit-gradient(
+					linear,
+					left top,
+					left bottom,
+					from(rgba(0, 0, 0, 0.4)),
+					to(transparent)
+				);
+				background: -o-linear-gradient(top, rgba(0, 0, 0, 0.4), transparent);
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent);
+			}
+
+			.c01-header-navigation a {
+				font-weight: 700;
+				font-family: Stratum, Arial, sans-serif;
+				text-transform: uppercase;
+				font-style: normal;
+				margin: 0;
+			}
+
+			.stratum {
+				font-family: Stratum, Arial, sans-serif;
+			}
+
+			.u:after {
+				z-index: 9999999;
+				content: "";
+				display: block;
+				top: 100%;
+				bottom: auto;
+				left: 0;
+				right: 0;
+				background-color: white;
+				height: 3px;
+				border-radius: 100%;
+				opacity: 0;
+				-webkit-transform: scaleX(0.7);
+				-ms-transform: scaleX(0.7);
+				transform: scaleX(0.7);
+				-webkit-transform-origin: left center;
+				-ms-transform-origin: left center;
+				transform-origin: left center;
+				-webkit-transition: opacity 0.25s linear,
+					-webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transition: opacity 0.25s linear,
+					-webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				-o-transition: opacity 0.25s linear,
+					transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transition: opacity 0.25s linear,
+					transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transition: opacity 0.25s linear,
+					transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+					-webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
+
+			.u:hover:after {
+				opacity: 1;
+				-webkit-transform: scaleX(1);
+				-ms-transform: scaleX(1);
+				transform: scaleX(1);
+			}
+
+			video.landing {
+				filter: brightness(40%);
+			}
+
+			.h-112 {
+				height: 28rem;
+			}
+		</style>
+	</head>
+	<body class="antialiased">
+		<header class="sticky top-0 z-50">
+			<nav
+				id="navbar"
+				class="c01-header-navigation active px-4 lg:px-6 p-16 text-white"
+			>
+				<div
+					class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+				>
+					<a href="#" class="flex items-center">
+						<img src="./logo.svg" class="mr-3 h-6 sm:h-16" />
+					</a>
+					<div class="flex items-center gap-1 lg:order-2">
+						<a
+							href="#"
+							class="hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+						>
+							<i class="fas fa-user mr-1"></i> Login
+						</a>
+						<a
+							href="#"
+							class="transition-all bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+						>
+							<i class="fas fa-calendar mr-1"></i> Schedule
+						</a>
+						<button
+							data-collapse-toggle="mobile-menu-2"
+							type="button"
+							class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+							aria-controls="mobile-menu-2"
+							aria-expanded="false"
+						>
+							<span class="sr-only">Open main menu</span>
+							<svg
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+							<svg
+								class="hidden w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<div
+						class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+						id="mobile-menu-2"
+					>
+						<ul
+							class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+						>
+							<li>
+								<a
+									href="#"
+									class="u block py-2 pr-4 pl-3 border-b-4 border-transparent hovser:border-white"
+									aria-current="page"
+									>Courses</a
+								>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="u block py-2 pr-4 pl-3 bordesr-b-4 border-transsparent hovser:border-white"
+									>Instructors</a
+								>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="u block py-2 pr-4 pl-3 bordser-b-4 border-transsparent hosver:border-white"
+									>Facilities</a
+								>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="u block py-2 pr-4 pl-3 bordeşr-bs-4 border-transsparent hosver:border-white"
+									>About</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div
+				class="relative flex items-center justify-center h-screen overflow-hidden top-0"
+			>
+				<div
+					class="relative text-center z-30 px-32 py-6 text-9xl text-white text-normal stratum"
+				>
+					AIM TRUE
+				</div>
+				<div class="absolute text-center bottom-0 z-30 text-4xl p-5 text-white">
+					<i
+						class="fas fa-circle-arrow-down fa-beat-fade"
+						style="--fa-animation-duration: 2s"
+					></i>
+				</div>
+				<video
+					autoplay
+					loop
+					muted
+					class="landing absolute z-10 w-auto min-w-full min-h-full max-w-none"
+				>
+					<source src="./video/landing.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<section>
+				<div
+					class="flex items-center content-center justify-center w-full bg-slate-900 text-white p-3 uppercase font-bold stratum text-2xl sticky top-0"
+				>
+					<i class="fas fa-crosshairs fa-fw mr-1"></i>
+					<span> Find a suitable course </span>
+				</div>
+
+				<div class="bg-slate-800 text-gray-200 p-5">
+					<div class="grid gap-8 grid-cols-4 grid-rows-1 stratum">
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-xl overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/13.jpg')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-emerald-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-gun mr-1"></i> Handgun 101
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									New gun owners seeking familiarity and comfort, as well as
+									those wanting to try something different and learn a new
+									skill, will find this course to be the perfect foundation.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-xl overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/15.jpg')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-indigo-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-gun mr-1"></i> Handgun 102
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									Once students have received foundational handgun training and
+									know how to safely handle a handgun, it’s time to learn how to
+									shoot. This is step 2 in our foundational handgun series.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-xl overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC02508.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-sky-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-gun mr-1"></i> Handgun 103
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									This intensive one-day class builds upon and refines the skill
+									sets previously established in Handgun 102 while also
+									introducing shooters to new drills, cutting edge concepts, and
+									core shooting principles.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-lg overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC02720.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-rose-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-gun mr-1"></i> Handgun 104
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									After a brief assessment, instructors will run the students
+									through the gauntlet of defensive handgun drills designed to
+									increase time on target and performance.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>4 Days</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-lg overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC09909.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-red-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-shield mt-1"></i> Executive Protection
+								Operations
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									Designed to meet the demand for executive security both
+									domestically and internationally, this comprehensive course
+									covers the most vital concepts of low to medium risk
+									protective operations.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>5 Days</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-lg overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC02s497.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-amber-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-truck-monster mr-1"></i> Bullets and
+								Vehicles
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									This course covers the dynamics of shooting from inside a
+									vehicle, shooting from a moving vehicle and through windshield
+									glass, as well as defensive vehicle use and cover. Students
+									learn to use a vehicle to the maximum advantage - shooting
+									through it, under it, and around it.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-lg overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC02429.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-pink-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-person-rifle mr-1"></i> Rifle Operator
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3">
+									In this two-day course, students learn how to use the
+									semi-automatic rifle or carbine for self-defense. All aspects
+									of defensive rifle shooting from near to far are addressed.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+						<!--begin-->
+						<div
+							class="shadow-lg rounded-lg overflow-hidden h-80 flex flex-col justify-between w-full bg-center bg-cover"
+							style="background-image: url('./image/DSC09897.JPG')"
+						>
+							<div
+								class="text-xl uppercase font-bold p-3 backdrop-blur-md bg-purple-900 bg-opacity-60"
+							>
+								<i class="fa-solid fa-building-shield mr-1"></i> Scenario Based
+								Training
+							</div>
+							<p
+								class="p-3 bg-black/70 grow flex items-center content-center hover:bg-black/50 transition-all"
+							>
+								<span class="flex flex-col gap-3" ..>
+									This is a holistic and comprehensive course that focuses on
+									reality based situations.
+									<br />
+									<a
+										href="javascript:void"
+										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
+									>
+										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
+									</a>
+								</span>
+							</p>
+							<div
+								class="uppercase bg-slate-900 p-3 flex justify-between items-center"
+							>
+								<span>1 Day</span>
+								<a
+									href="#"
+									class="bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800 transition-all"
+								>
+									<i class="fas fa-calendar mr-1"></i> Sign Up
+								</a>
+							</div>
+						</div>
+						<!--end-->
+					</div>
+				</div>
+			</section>
+			<section class="sticky top-0" style="z-index: -1">
+				<div
+					class="pt-16 pb-32 flex content-center items-center justify-center"
+					style="min-height: 75vh"
+				>
+					<div
+						class="absolute top-0 w-full h-full bg-center bg-cover brightness-50 sepia"
+						style="background-image: url('./image/13.jpg'); z-index: -1"
+					></div>
+					<div class="container relative mx-auto">
+						<div lass="items-center flex flex-wrap">
+							<div
+								class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center stratum"
+							>
+								<div class="pr-12">
+									<h1 class="text-white font-semibold text-5xl">
+										Your story starts with us.
+									</h1>
+									<p class="mt-4 text-lg text-gray-300">
+										We constantly upgrade/improve our weapons and develop new
+										accessories and equipment to make them more
+										operator-friendly and efficient.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="pb-20 bg-slate-800 text-gray-200">
+				<div
+					class="flex items-center content-center justify-center w-full bg-slate-900 text-white p-3 uppercase font-bold stratum text-2xl sticky top-0"
+				>
+					<i class="fas fa-boxes-stacked fa-fw mr-1"></i>
+					<span> Our values </span>
+				</div>
+				<div class="container mx-auto px-4 mt-24">
+					<div class="flex flex-wrap">
+						<div class="pt-6 w-full md:w-4/12 px-4 text-center">
+							<div
+								class="relative flex flex-col min-w-0 break-words bg-transparent w-full mb-8 shadow-lg h-112"
+							>
+								<img
+									src="./image/DSC09926.JPG"
+									class="absolute rounded-lg w-full h-full object-cover brightness-50 grayscale"
+									alt=""
+								/>
+								<div
+									class="py-0 flex flex-col justify-between flex-auto relative hover:backdrop-sepia transition-all rounded-lg overflow-hidden"
+								>
+									<h6
+										class="text-2xl font-bold stratum uppercase p-3 bg-black/30 backdrop-blur-sm"
+									>
+										Trust
+									</h6>
+									<p
+										class="mb-3 mx-3 px-2 py-3 stratum font-semibold bg-black/30 backdrop-blur-sm rounded-xl"
+									>
+										As a company that, first and foremost, designs and
+										manufactures service pistols for law enforcement and the
+										military, we are well aware that human lives and the
+										successful execution of missions ensuring public order and
+										national security, may rely on our handguns. Therefore we
+										manufacture our products to the highest standards so they
+										can always be trusted to perform even in the most
+										challenging circumstances.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="w-full md:w-4/12 px-4 text-center h-40">
+							<div
+								class="relative flex flex-col min-w-0 break-words bg-transparent w-full mb-8 shadow-lg h-112"
+							>
+								<img
+									src="./image/DSC02815.JPG"
+									class="absolute rounded-lg w-full h-full object-cover brightness-50 grayscale"
+									alt=""
+								/>
+								<div
+									class="py-0 flex flex-col justify-between flex-auto relative hover:backdrop-sepia transition-all rounded-lg"
+								>
+									<h6
+										class="text-2xl font-bold stratum uppercase p-3 bg-black/30 backdrop-blur-sm"
+									>
+										Integrity
+									</h6>
+									<p
+										class="mb-3 mx-3 px-2 py-3 stratum bg-black/30 backdrop-blur-sm rounded-xl"
+									>
+										Because the trust of our customers in our products is our
+										utmost priority when we put our pistols, accessories, and
+										other services on the market, we make sure that they will
+										always perform as they have been advertised. In very
+										exceptional cases where our products and services do not
+										satisfy our customers’ expectations, we take all the
+										necessary steps according to our responsibility to protect
+										the trust placed in our company.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="pt-6 w-full md:w-4/12 px-4 text-center">
+							<div
+								class="relative flex flex-col min-w-0 break-words bg-transparent w-full mb-8 shadow-lg h-112"
+							>
+								<img
+									src="./image/DSC09985.jpg"
+									class="absolute rounded-lg w-full h-full object-cover brightness-50 grayscale"
+									alt=""
+								/>
+								<div
+									class="py-0 flex flex-col justify-between flex-auto relative hover:backdrop-sepia transition-all rounded-lg"
+								>
+									<h6
+										class="text-2xl font-bold stratum uppercase p-3 bg-black/30 backdrop-blur-sm"
+									>
+										Ease of Use
+									</h6>
+									<p
+										class="mb-3 mx-3 px-2 py-3 stratum bg-black/30 backdrop-blur-sm rounded-xl"
+									>
+										Our product designs and manufacturing materials reflect our
+										state-of-the-art techniques and technologies. Still, we
+										would never allow these technological developments to make
+										our products so complicated as to render them hard to use
+										and maintain. We will always use the state of the art
+										techniques and technologies to produce operator-friendly and
+										efficient handguns.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="sticky top-0 h-80 flex items-center justify-center text-white stratum"
+			>
+				<div
+					class="h-full w-full bg-cover brightness-50 sepia"
+					style="
+						background-image: url('./image/DSC09926.JPG');
+						background-position: 0px 891px;
+					"
+				></div>
+				<div
+					class="absolute flex flex-col items-center justify-center text-3xl gap-3 -mt-20"
+				>
+					<div>COURSE PROGRESSIONS</div>
+					<div class="text-lg">
+						Discover our recommended paths of progression per firearms platform
+						based on your individual objectives.
+					</div>
+					<a
+						href="#"
+						class="bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+					>
+						<i class="fas fa-medal mr-1"></i> More Info
+					</a>
+				</div>
+			</section>
+			<section class="bg-slate-800 sticky top-0 text-gray-700">
+				<div class="flex flex-wrap items-center -mt-20 pt-10">
+					<div
+						class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+						style="height: 80px"
+					>
+						<svg
+							class="absolute bottom-0 overflow-hidden"
+							xmlns="http://www.w3.org/2000/svg"
+							preserveAspectRatio="none"
+							version="1.1"
+							viewBox="0 0 2560 100"
+							x="0"
+							y="0"
+						>
+							<polygon
+								class="text-slate-900 fill-current opacity-50"
+								points="2560 0 2560 100 0 100"
+							></polygon>
+						</svg>
+					</div>
+					<div class="w-full md:w-5/12 px-4 mr-auto ml-auto text-gray-200">
+						<div
+							class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100"
+						>
+							<i class="fas fa-user-friends text-xl"></i>
+						</div>
+						<h3 class="text-3xl mb-2 font-semibold leading-normal">
+							Working with us is a pleasure
+						</h3>
+						<p class="text-lg font-light leading-relaxed mt-4 mb-4">
+							Considering our nation’s needs,
+						</p>
+						<p class="text-lg font-light leading-relaxed mt-0 mb-4">
+							We design, develop, and produce innovative weapons that possess a
+							high international sale potential within the lowest and the
+							uppermost segments of small arms category (namely,pistols, heavy
+							machine guns, and light automatic cannons).
+						</p>
+					</div>
+					<div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+						<div
+							class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-slate-600"
+						>
+							<img
+								alt="..."
+								src="./image/3.jpg"
+								class="w-full align-middle rounded-t-lg"
+							/>
+							<blockquote class="relative p-8 mb-4">
+								<svg
+									preserveAspectRatio="none"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 583 95"
+									class="absolute left-0 w-full block"
+									style="height: 95px; top: -94px"
+								>
+									<polygon
+										points="-30,95 583,95 583,65"
+										class="text-slate-600 fill-current"
+									></polygon>
+								</svg>
+								<h4 class="text-xl font-bold text-white">Top Notch Services</h4>
+								<p class="text-md font-light mt-2 text-white">
+									The Arctic Ocean freezes every winter and much of the sea-ice
+									then thaws every summer, and that process will continue
+									whatever happens.
+								</p>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="py-20 relative top-0 bg-slate-900">
+				<div
+					class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+					style="height: 80px"
+				>
+					<svg
+						class="absolute bottom-0 overflow-hidden"
+						xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="none"
+						version="1.1"
+						viewBox="0 0 2560 100"
+						x="0"
+						y="0"
+					>
+						<polygon
+							class="text-slate-900 fill-current"
+							points="2560 0 2560 100 0 100"
+						></polygon>
+					</svg>
+				</div>
+				<div class="container mx-auto px-4">
+					<div class="items-center flex flex-wrap">
+						<div class="w-full md:w-5/12">
+							<!-- <img
+                alt="..."
+                class="max-w-full rounded-lg shadow-lg"
+                src="image/DSC02815.JPG"
+              /> -->
+							<video
+								autoplay
+								loop
+								muted
+								class="relative z-10 w-auto min-w-full min-h-full rounded-xl shadow-xl brightness-50"
+							>
+								<source
+									src="./video/Tactical Consideration!.mp4"
+									type="video/mp4"
+								/>
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class="w-full md:w-5/12 ml-auto mr-auto px-4 text-gray-200">
+							<div class="md:pr-12">
+								<div
+									class="flex items-center content-center w-full text-white py-3 uppercase font-bold stratum text-2xl sticky top-0"
+								>
+									<i class="fas fa-rocket fa-fw mr-1"></i>
+									<span> A Growing Company </span>
+								</div>
+								<p class="mt-4 text-lg leading-relaxed">
+									The extension comes with three pre-built pages to help you get
+									started faster. You can change the text and images and you're
+									good to go.
+								</p>
+								<ul class="list-none mt-6">
+									<li class="py-2">
+										<div class="flex items-center">
+											<div>
+												<span
+													class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
+													><i class="fas fa-fingerprint"></i
+												></span>
+											</div>
+											<div>
+												<h4 class="text-gray-400">
+													Carefully crafted components
+												</h4>
+											</div>
+										</div>
+									</li>
+									<li class="py-2">
+										<div class="flex items-center">
+											<div>
+												<span
+													class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
+													><i class="fab fa-html5"></i
+												></span>
+											</div>
+											<div>
+												<h4 class="text-gray-400">Amazing page examples</h4>
+											</div>
+										</div>
+									</li>
+									<li class="py-2">
+										<div class="flex items-center">
+											<div>
+												<span
+													class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
+													><i class="far fa-paper-plane"></i
+												></span>
+											</div>
+											<div>
+												<h4 class="text-gray-400">Dynamic components</h4>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="pt-20 pb-48 bg-slate-700 relative">
+				<div class="container mx-auto px-4">
+					<div class="flex flex-wrap justify-center text-center mb-24">
+						<div class="w-full lg:w-6/12 px-4">
+							<h2 class="text-4xl font-semibold">Here are our heroes</h2>
+							<p class="text-lg leading-relaxed m-4 text-gray-600">
+								According to the National Oceanic and Atmospheric
+								Administration, Ted, Scambos, NSIDClead scentist, puts the
+								potentially record maximum.
+							</p>
+						</div>
+					</div>
+					<div class="flex flex-wrap">
+						<div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+							<div class="px-6">
+								<img
+									alt="..."
+									src="./image/15.jpg"
+									class="shadow-lg rounded-full max-w-full mx-auto"
+									style="max-width: 120px"
+								/>
+								<div class="pt-6 text-center">
+									<h5 class="text-xl font-bold">Ryan Tompson</h5>
+									<p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+										Web Developer
+									</p>
+									<div class="mt-6">
+										<button
+											class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-twitter"></i></button
+										><button
+											class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-facebook-f"></i></button
+										><button
+											class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-dribbble"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+							<div class="px-6">
+								<img
+									alt="..."
+									src="./assets/img/team-2-800x800.jpg"
+									class="shadow-lg rounded-full max-w-full mx-auto"
+									style="max-width: 120px"
+								/>
+								<div class="pt-6 text-center">
+									<h5 class="text-xl font-bold">Romina Hadid</h5>
+									<p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+										Marketing Specialist
+									</p>
+									<div class="mt-6">
+										<button
+											class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-google"></i></button
+										><button
+											class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-facebook-f"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+							<div class="px-6">
+								<img
+									alt="..."
+									src="./assets/img/team-3-800x800.jpg"
+									class="shadow-lg rounded-full max-w-full mx-auto"
+									style="max-width: 120px"
+								/>
+								<div class="pt-6 text-center">
+									<h5 class="text-xl font-bold">Alexa Smith</h5>
+									<p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+										UI/UX Designer
+									</p>
+									<div class="mt-6">
+										<button
+											class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-google"></i></button
+										><button
+											class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-twitter"></i></button
+										><button
+											class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-instagram"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+							<div class="px-6">
+								<img
+									alt="..."
+									src="./assets/img/team-4-470x470.png"
+									class="shadow-lg rounded-full max-w-full mx-auto"
+									style="max-width: 120px"
+								/>
+								<div class="pt-6 text-center">
+									<h5 class="text-xl font-bold">Jenna Kardi</h5>
+									<p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+										Founder and CEO
+									</p>
+									<div class="mt-6">
+										<button
+											class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-dribbble"></i></button
+										><button
+											class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-google"></i></button
+										><button
+											class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-twitter"></i></button
+										><button
+											class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+										>
+											<i class="fab fa-instagram"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="pb-20 relative block bg-gray-900">
+				<div
+					class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+					style="height: 80px"
+				>
+					<svg
+						class="absolute bottom-0 overflow-hidden"
+						xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="none"
+						version="1.1"
+						viewBox="0 0 2560 100"
+						x="0"
+						y="0"
+					>
+						<polygon
+							class="text-gray-900 fill-current"
+							points="2560 0 2560 100 0 100"
+						></polygon>
+					</svg>
+				</div>
+				<div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
+					<div class="flex flex-wrap text-center justify-center">
+						<div class="w-full lg:w-6/12 px-4">
+							<h2 class="text-4xl font-semibold text-white">Build something</h2>
+							<p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
+								Put the potentially record low maximum sea ice extent tihs year
+								down to low ice. According to the National Oceanic and
+								Atmospheric Administration, Ted, Scambos.
+							</p>
+						</div>
+					</div>
+					<div class="flex flex-wrap mt-12 justify-center">
+						<div class="w-full lg:w-3/12 px-4 text-center">
+							<div
+								class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+							>
+								<i class="fas fa-medal text-xl"></i>
+							</div>
+							<h6 class="text-xl mt-5 font-semibold text-white">
+								Excelent Services
+							</h6>
+							<p class="mt-2 mb-4 text-gray-500">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+						<div class="w-full lg:w-3/12 px-4 text-center">
+							<div
+								class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+							>
+								<i class="fas fa-poll text-xl"></i>
+							</div>
+							<h5 class="text-xl mt-5 font-semibold text-white">
+								Grow your market
+							</h5>
+							<p class="mt-2 mb-4 text-gray-500">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+						<div class="w-full lg:w-3/12 px-4 text-center">
+							<div
+								class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+							>
+								<i class="fas fa-lightbulb text-xl"></i>
+							</div>
+							<h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
+							<p class="mt-2 mb-4 text-gray-500">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="relative block py-24 lg:pt-0 bg-gray-900">
+				<div class="container mx-auto px-4">
+					<div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+						<div class="w-full lg:w-6/12 px-4">
+							<div
+								class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
+							>
+								<div class="flex-auto p-5 lg:p-10">
+									<h4 class="text-2xl font-semibold">Want to work with us?</h4>
+									<p class="leading-relaxed mt-1 mb-4 text-gray-600">
+										Complete this form and we will get back to you in 24 hours.
+									</p>
+									<div class="relative w-full mb-3 mt-8">
+										<label
+											class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											for="full-name"
+											>Full Name</label
+										><input
+											type="text"
+											class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+											placeholder="Full Name"
+											style="transition: all 0.15s ease 0s"
+										/>
+									</div>
+									<div class="relative w-full mb-3">
+										<label
+											class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											for="email"
+											>Email</label
+										><input
+											type="email"
+											class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+											placeholder="Email"
+											style="transition: all 0.15s ease 0s"
+										/>
+									</div>
+									<div class="relative w-full mb-3">
+										<label
+											class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											for="message"
+											>Message</label
+										><textarea
+											rows="4"
+											cols="80"
+											class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+											placeholder="Type a message..."
+										></textarea>
+									</div>
+									<div class="text-center mt-6">
+										<button
+											class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+											type="button"
+											style="transition: all 0.15s ease 0s"
+										>
+											Send Message
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="relative bg-gray-300 pt-8 pb-6">
+			<div
+				class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+				style="height: 80px"
+			>
+				<svg
+					class="absolute bottom-0 overflow-hidden"
+					xmlns="http://www.w3.org/2000/svg"
+					preserveAspectRatio="none"
+					version="1.1"
+					viewBox="0 0 2560 100"
+					x="0"
+					y="0"
+				>
+					<polygon
+						class="text-gray-300 fill-current"
+						points="2560 0 2560 100 0 100"
+					></polygon>
+				</svg>
+			</div>
+			<div class="container mx-auto px-4">
+				<div class="flex flex-wrap">
+					<div class="w-full lg:w-6/12 px-4">
+						<h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+						<h5 class="text-lg mt-0 mb-2 text-gray-700">
+							Find us on any of these platforms, we respond 1-2 business days.
+						</h5>
+						<div class="mt-6">
+							<button
+								class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+								type="button"
+							>
+								<i class="flex fab fa-twitter"></i></button
+							><button
+								class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+								type="button"
+							>
+								<i class="flex fab fa-facebook-square"></i></button
+							><button
+								class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+								type="button"
+							>
+								<i class="flex fab fa-dribbble"></i></button
+							><button
+								class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+								type="button"
+							>
+								<i class="flex fab fa-github"></i>
+							</button>
+						</div>
+					</div>
+					<div class="w-full lg:w-6/12 px-4">
+						<div class="flex flex-wrap items-top mb-6">
+							<div class="w-full lg:w-4/12 px-4 ml-auto">
+								<span
+									class="block uppercase text-gray-600 text-sm font-semibold mb-2"
+									>Useful Links</span
+								>
+								<ul class="list-unstyled">
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://www.creative-tim.com/presentation"
+											>About Us</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://blog.creative-tim.com"
+											>Blog</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://www.github.com/creativetimofficial"
+											>Github</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://www.creative-tim.com/bootstrap-themes/free"
+											>Free Products</a
+										>
+									</li>
+								</ul>
+							</div>
+							<div class="w-full lg:w-4/12 px-4">
+								<span
+									class="block uppercase text-gray-600 text-sm font-semibold mb-2"
+									>Other Resources</span
+								>
+								<ul class="list-unstyled">
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
+											>MIT License</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://creative-tim.com/terms"
+											>Terms &amp; Conditions</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://creative-tim.com/privacy"
+											>Privacy Policy</a
+										>
+									</li>
+									<li>
+										<a
+											class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+											href="https://creative-tim.com/contact-us"
+											>Contact Us</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="my-6 border-gray-400" />
+				<div
+					class="flex flex-wrap items-center md:justify-between justify-center"
+				>
+					<div class="w-full md:w-4/12 px-4 mx-auto text-center">
+						<div class="text-sm text-gray-600 font-semibold py-1">
+							Copyright © 2019 Tailwind Starter Kit by
+							<a
+								href="https://www.creative-tim.com"
+								class="text-gray-600 hover:text-gray-900"
+								>Creative Tim</a
+							>.
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script>
+			// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+
+			let threshold = 120;
+			let lastScrollY = 0;
+			let initiallyRemoved = false;
+
+			const handleScroll = () => {
+				if (window.scrollY > lastScrollY) {
+					//scroll down
+
+					if (document.documentElement.scrollTop > threshold) {
+						document.getElementById("navbar").classList.remove("active");
+					}
+				} else {
+					console.log("scroll up");
+					document.getElementById("navbar").classList.add("active");
+				}
+				lastScrollY = window.pageYOffset;
+			};
+
+			window.addEventListener("scroll", handleScroll);
+		</script>
+	</body>
+	<script>
+		function toggleNavbar(collapseID) {
+			document.getElementById(collapseID).classList.toggle("hidden");
+			document.getElementById(collapseID).classList.toggle("block");
+		}
+	</script>
+</html>
