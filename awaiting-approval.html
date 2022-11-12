@@ -123,109 +123,29 @@
 			style="background-image: url('./image/13.jpg')"
 		>
 			<div
-				class="container mx-auto shadow-lg backdrop-blur-lg bg-black/60 h-screen flex flex-col content-center justify-center"
+				class="container mx-auto shadow-lg backdrop-blur-lg bg-black/60 h-screen flex flex-col justify-center content-center pt-48"
 			>
-				<div class="text-5xl text-gray-200 flex justify-center p-12">
-					Sign Up
-				</div>
-				<form>
-					<div class="grid auto-rows-max grid-cols-2 gap-8 px-16 pt-3 mb-8">
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Name
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="text"
-								placeholder="Enter your name"
-							/>
-						</div>
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Lastname
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="text"
-								placeholder="Enter your lastname"
-							/>
-						</div>
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Email
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="email"
-								placeholder="example@gmail.com"
-							/>
-						</div>
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Phone Number
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="text"
-								placeholder="+90 511 222 3344"
-							/>
-						</div>
-
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Password
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="password"
-								minlength="8"
-								maxlength="16"
-								placeholder="Type your name"
-							/>
-						</div>
-
-						<div>
-							<div class="text-sm font-bold text-slate-400 tracking-wide mb-2">
-								Repeat Password
-							</div>
-							<input
-								class="w-full text-white rounded-tl-md rounded-tr-md p-4 border-b border-gray-300 focus:outline-none focus:border-sky-500 bg-slate-900"
-								type="password"
-								minlength="8"
-								maxlength="16"
-								placeholder="Type your lastname"
-							/>
-						</div>
-
-						<div class="col-span-2">
-							<div class="text-sky-400 text-sm">
-								- The password you enter must be between 8-16 characters long
-								and it should contain at least one letter and one number.
-							</div>
-							<div class="text-sky-400 text-sm">
-								- All fields above are required.
-							</div>
-						</div>
-					</div>
-					<div class="flex items-center justify-center">
-						<button
-							type="submit"
-							class="transition-all duration-400 bg-blue-700 text-gray-100 p-4 w-48 rounded-full tracking-wide font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-800 shadow-lg"
-						>
-							Register
-						</button>
-					</div>
-				</form>
 				<div
-					class="font-display font-semibold text-gray-300 text-center p-10 border-t border-gray-700 mt-8"
+					class="px-8 py-16 bg-slate-800 text-gray-200 rounded-lg shadow-lg flex flex-col max-w-2xl mx-auto"
 				>
-					Already have an account?
-					<a
-						href="./login.html"
-						class="cursor-pointer text-sky-600 hover:text-sky-800"
+					<div
+						class="font-bold text-lg uppercase pb-3 flex justify-start items-center gap-3"
 					>
-						Sign in</a
-					>
+						<i class="fas fa-exclamation-circle fa-lg text-sky-800"></i>
+						<span>Activate Account</span>
+					</div>
+					<div>
+						In order to be able to login to the website, you need to verify your
+						email address by clicking on the link we've sent you.
+					</div>
+					<div class="text-sm mt-5">
+						<span>Did not receive it?</span>
+						<a
+							href="javascript:void(0);"
+							class="text-sky-500 hover:text-sky-600"
+							>Resend</a
+						>
+					</div>
 				</div>
 			</div>
 		</main>

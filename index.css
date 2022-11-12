@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Stratum";
+    src: url(./font/Stratum2WebBlack.e2ef8d1.woff) format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Stratum";
+    src: url(./font/Stratum2WebBold.b575fab.woff) format("truetype");
+    font-weight: normal;
+}
+.c01-header-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+        -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.c01-header-navigation:not(.active) {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.c01-header-navigation:after,
+.c01-header-navigation:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.c01-header-navigation:after {
+    z-index: -99999;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 0.4)),
+        to(transparent)
+    );
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.4), transparent);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.c01-header-navigation a {
+    font-weight: 700;
+    font-family: Stratum, Arial, sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    margin: 0;
+}
+
+.stratum {
+    font-family: Stratum, Arial, sans-serif;
+}
+
+.u:after {
+    z-index: 9999999;
+    content: "";
+    display: block;
+    top: 100%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    height: 3px;
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-transform: scaleX(0.7);
+    -ms-transform: scaleX(0.7);
+    transform: scaleX(0.7);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition: opacity 0.25s linear,
+        -webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.25s linear,
+        -webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: opacity 0.25s linear,
+        transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.25s linear,
+        transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.25s linear,
+        transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        -webkit-transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.u:hover:after {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+video.landing {
+    filter: brightness(40%);
+}
+
+.h-112 {
+    height: 28rem;
+}
+.z-90 {
+    z-index: 90;
+}
