@@ -175,7 +175,7 @@
 									skill, will find this course to be the perfect foundation.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -215,7 +215,7 @@
 									shoot. This is step 2 in our foundational handgun series.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -256,7 +256,7 @@
 									core shooting principles.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -296,7 +296,7 @@
 									increase time on target and performance.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -338,7 +338,7 @@
 									protective operations.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -381,7 +381,7 @@
 									through it, under it, and around it.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -421,7 +421,7 @@
 									of defensive rifle shooting from near to far are addressed.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -461,7 +461,7 @@
 									reality based situations.
 									<br />
 									<a
-										href="javascript:void"
+										href="./course-details.html"
 										class="bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800 w-36 transition-all"
 									>
 										<i class="fa-solid fa-circle-info mr-1"></i> Learn More
@@ -1130,7 +1130,7 @@
 		</footer>
 		<div
 			id="loginModal"
-			class="relative -z-50"
+			class="relative -z-50 opacity-0"
 			aria-labelledby="modal-title"
 			role="dialog"
 			aria-modal="true"
@@ -1273,6 +1273,7 @@
 			};
 
 			window.addEventListener("scroll", handleScroll);
+			window.addEventListener("DOMContentLoaded", () => {});
 
 			let panelFrom = [
 				"ease-out",
@@ -1297,7 +1298,7 @@
 				let panel = document.getElementById("loginModalPanel");
 				let backdrop = document.getElementById("loginModalBackdrop");
 				let modal = document.getElementById("loginModal");
-
+				modal.classList.remove("opacity-0");
 				panelFrom.map((cls) => {
 					panel.classList.remove(cls);
 				});
